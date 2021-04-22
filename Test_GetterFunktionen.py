@@ -20,3 +20,9 @@ def test_get_diag1():
 def test_get_diag2():
   #[TODO]
   return True
+
+def run_tests_getter_functions():
+  test_get_row()
+  test_get_column()
+  test_get_diag1()
+  test_get_diag2()

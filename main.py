@@ -1,10 +1,12 @@
 from AusgabeFunktionen import board_to_string
-from ErzeugungsFunktionen import create_final_board
-from ErzeugungsFunktionen import erzeugeEindimensionalesArray
+from ErzeugungsFunktionen import create_board
 from GetterFunktionen import get_row
 from GetterFunktionen import get_column
 from GetterFunktionen import get_diag1
 from GetterFunktionen import get_diag2
+from Tests import run_tests
+#from tictactoe import run_tictactoe
+
 
 
 def any_of(a, f):
@@ -123,7 +125,7 @@ def startOfTheGame():
 
   if(gameSize > 2 and gameSize < 10):
     
-    mylist = create_final_board(erzeugeEindimensionalesArray([], gameSize, 0),gameSize,gameSize)
+    mylist = create_board([], gameSize, 0)
     print(board_to_string(mylist, len(mylist)))
     moves(mylist, 0) #Spieler X darf beginnen
   else:
@@ -146,6 +148,7 @@ def moves(spielfeld, counter):
     neuesSpielfeld = spielfeld
     print("Diese Stelle ist schon mit " + spielfeld[rowInput][columnInput] + " belegt")
   print(board_to_string(neuesSpielfeld, len(neuesSpielfeld)))
+  print("Die Länge des Spielfelds beträgt: " +str(len(neuesSpielfeld)))
   #print(board_to_string(neuesSpielfeld, len(neuesSpielfeld)))
   if(player_X_wins(neuesSpielfeld)):
     print("Der Spieler X hat gewonnen!!!")
@@ -161,8 +164,3 @@ def insertIntoList(l, rowInput, columnInput, c):
   return l
 
 startOfTheGame()
-
-#test_contains_three()
-#test_row_contains_only()
-#test_player_X_wins()
-#test_player_O_wins()

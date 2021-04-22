@@ -1,0 +1,4 @@
+from GetterFunktionen import get_diag2
+from ErzeugungsFunktionen import create_inner_array_from_board
+from ErzeugungsFunktionen import erzeugeEindimensionalesArray
+
