@@ -56,8 +56,8 @@ def moves(spielfeld, counter):
 
 def insertIntoArray(spielfeld, rowInput, columnInput, c, counter):
 
-  if(spielfeld[rowInput][columnInput] == " " and (0 < rowInput < len(spielfeld)) 
-  and (0 < columnInput < len(spielfeld))):
+  if(spielfeld[rowInput][columnInput] == " " and (0 <= rowInput < len(spielfeld)) 
+  and (0 <= columnInput < len(spielfeld))):
     neuesSpielfeld = insertIntoList(spielfeld, rowInput, columnInput, c)
   else:
     print("Ihr Zug war ungültig. Als Strafe ist nun Spieler " + actual_player(counter+1) + " dran!")
