@@ -1,5 +1,6 @@
 from AusgabeFunktionen import board_to_string
 from ErzeugungsFunktionen import create_final_board
+from ErzeugungsFunktionen import erzeugeEindimensionalesArray
 from GetterFunktionen import get_row
 from GetterFunktionen import get_column
 from GetterFunktionen import get_diag1
@@ -80,11 +81,8 @@ def player_wins(a,c):
   '''Erwartet ein zweidimensionales Array a.
      Liefert True, wenn eine Zeile, Spalte oder Diagonale nur c enthält.
   '''
-  rows = [get_row(a,i) for i in range(len(a))]
-  cols = [get_column(a,i) for i in range(len(a))]
-  print("Die Länge vom Array beträgt: " + str(len(a)))
-  for i in range(len(a)):
-    print(i)
+  rows = [get_row(a,i) for i in range(len(a)-1)]
+  cols = [get_column(a,i) for i in range(len(a)-1)]
   diags = [get_diag1(a), get_diag2(a)]
 
   contains_three_c = lambda l: contains_three(l,c,0)
@@ -124,8 +122,8 @@ def startOfTheGame():
   gameSize = int(playerinput)
 
   if(gameSize > 2 and gameSize < 10):
-    mylist = create_final_board([[]],gameSize,gameSize)
-    print("Zeile 197: Die Länge vom Array beträgt: " + str(len(mylist)))
+    
+    mylist = create_final_board(erzeugeEindimensionalesArray([], gameSize, 0),gameSize,gameSize)
     print(board_to_string(mylist, len(mylist)))
     moves(mylist, 0) #Spieler X darf beginnen
   else:
@@ -138,7 +136,6 @@ def moves(spielfeld, counter):
     print("Spieler O ist dran")
   rowInput = int(input("An welcher freien Zeile wollen Sie Ihren nächsten Zug verwenden?: "))
   columnInput = int(input("An welcher freien Spalte wollen Sie Ihren nächsten Zug verwenden?: "))
-  print("Der User hat in Zeile 208/209 eingegeben " + str(rowInput) + " | "+ str(columnInput))
 
   if(spielfeld[rowInput][columnInput] == " "):
     if(counter % 2 == 0):   #Also X
@@ -146,15 +143,16 @@ def moves(spielfeld, counter):
     else: 
       neuesSpielfeld = insertIntoList(spielfeld, rowInput, columnInput, 'O')
   else:
+    neuesSpielfeld = spielfeld
     print("Diese Stelle ist schon mit " + spielfeld[rowInput][columnInput] + " belegt")
   print(board_to_string(neuesSpielfeld, len(neuesSpielfeld)))
+  #print(board_to_string(neuesSpielfeld, len(neuesSpielfeld)))
   if(player_X_wins(neuesSpielfeld)):
     print("Der Spieler X hat gewonnen!!!")
     return;
   if(player_O_wins(neuesSpielfeld)):
     print("Der Spieler O hat gewonnen!!!")
     return;
-  print("Bis hierhin geht es nicht")
   moves(neuesSpielfeld, counter+1)
 
 
@@ -164,7 +162,7 @@ def insertIntoList(l, rowInput, columnInput, c):
 
 startOfTheGame()
 
-test_contains_three()
-test_row_contains_only()
-test_player_X_wins()
-test_player_O_wins()
+#test_contains_three()
+#test_row_contains_only()
+#test_player_X_wins()
+#test_player_O_wins()
