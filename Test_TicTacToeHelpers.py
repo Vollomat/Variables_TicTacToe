@@ -1,7 +1,7 @@
-from TicTacToeHelpers import player_wins
+from TicTacToeHelpers import player_wins,draw,move_allowed
 
 
-def test_player_X_wins():
+def test_player_wins():
   a1 = [['X','X','X'],['O',' ','O'],['X','O',' ']]
   # [TODO] Mehr Tests für Diagonalen und Spalten hinzufügen.
   assert(player_wins(a1,'X'))
@@ -13,8 +13,21 @@ def test_player_X_wins():
   assert(player_wins(a3,'O'))
 
   a4 = [[' ',' ','X'],['X','X','O'],['X','O',' ']]
-  assert(not player_wins(a4,'X'))
+  assert(player_wins(a4,'X'))
 
-def test_player_O_wins():
-  #[TODO]
-  pass # Platzhalter: Statement, das nichts macht
+def test_draw():
+  a1 = [['X','X','X'],['O',' ','O'],['X','O',' ']]
+  assert(not draw(a1))
+  a1 = [['O','X','O'],['X','O','O'],['X','O','X']]
+  assert(draw(a1))
+
+def test_move_allowed():
+  a1 = [['X','X','X'],['O',' ','O'],['X','O',' ']]
+  assert(move_allowed(a1,1,1))
+  assert(move_allowed(a1,2,2))
+  assert(not move_allowed(a1,4,0))
+  assert(not move_allowed(a1,0,4))
+
+def run_tests_tictactoehelpers():
+  test_player_wins()
+  test_draw()

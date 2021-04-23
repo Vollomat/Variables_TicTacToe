@@ -16,3 +16,4 @@ def test_row_contains_only():
   assert(row_contains_only(a1,0,'X'))
   assert(not row_contains_only(a1,1,'X'))
   assert(not row_contains_only(a1,2,'X'))
+

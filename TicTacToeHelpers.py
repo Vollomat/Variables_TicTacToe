@@ -25,10 +25,11 @@ def draw(a):
   list = [get_row(a,i) for i in range(len(a))]
   return not contains_one(list," ")
 
-def move_allowed(spielfeld, row, col):
+def move_allowed(spielfeld, rowInput, columnInput):
   '''Prüft, ob an Stelle (row,col) ein Zug gemacht werden darf.'''
-  return row in range(len(spielfeld)) and col in range(len(spielfeld[row])) and spielfeld[row][col] == " "
-
-def game_finished(spielfeld):
-  '''Liefert True, falls das Spiel zu Ende ist.'''
-  return player_X_wins(spielfeld) or player_O_wins(spielfeld) or draw(spielfeld)
+  if((0 <= rowInput < len(spielfeld)) and (0 <= columnInput < len(spielfeld))):
+    if(spielfeld[rowInput][columnInput] == " "):
+      return True
+    else:
+      print("Diese Stelle war schon belegt!")
+  return False
