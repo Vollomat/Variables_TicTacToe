@@ -38,6 +38,8 @@ def move_allowed(spielfeld, rowInput, columnInput):
       return True
   return False
 
+
+
 def is_game_over(spielfeld):
   if(player_X_wins(spielfeld)):
     print()

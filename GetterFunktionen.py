@@ -21,6 +21,6 @@ def get_diag1(a):
 
 
 def get_diag2(a):
-  '''Liefert die Diagonale in a, die von links unten nach rechts oben geht.'''
+  '''Liefert die Diagonale in a, die von rechts oben nach links unten geht.'''
   return [a[i][-i-1] for i in range(len(a))]
 

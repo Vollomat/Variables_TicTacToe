@@ -23,6 +23,8 @@ def create_final_board(list2D, gameSize, gameSize2):
 
 
 def create_board(list1D, gameSize, counter):
+  '''Diese Funktion dient dazu, dass in der 0. Zeile der 2D-Liste schon die richtige Anzahl an " " stehen. Ruft nachfolgend die Funtkion create_final_board auf.
+  '''
   if(counter < gameSize):
     list1D.append(" ")
   else:
