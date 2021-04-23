@@ -1,7 +1,7 @@
 from ErzeugungsFunktionen import create_board
 from AusgabeFunktionen import board_to_string
 from ArrayHelpers import insertIntoList
-from TicTacToeHelpers import player_X_wins,player_O_wins,move_allowed,draw,is_game_over
+from TicTacToeHelpers import is_game_over, move_allowed
 
 
 def actual_player(counter):

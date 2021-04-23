@@ -4,10 +4,10 @@ from Test_TicTacToeHelpers import run_tests_tictactoehelpers
 from Test_ArrayHelpers import run_tests_arrayhelpers
 
 def run_tests():
-  run_tests_getter_functions()
-  run_tests_erzeugungsfunktionen()
-  run_tests_tictactoehelpers()
   run_tests_arrayhelpers()
+  run_tests_erzeugungsfunktionen()
+  run_tests_getter_functions()
+  run_tests_tictactoehelpers()
   print("--------Alle Tests funktionieren--------")
 
 

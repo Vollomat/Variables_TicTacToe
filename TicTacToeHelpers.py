@@ -36,8 +36,6 @@ def move_allowed(spielfeld, rowInput, columnInput):
   if((0 <= rowInput < len(spielfeld)) and (0 <= columnInput < len(spielfeld))):
     if(spielfeld[rowInput][columnInput] == " "):
       return True
-    else:
-      print("Diese Stelle war schon belegt!")
   return False
 
 def is_game_over(spielfeld):
