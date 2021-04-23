@@ -9,7 +9,6 @@ def create_inner_array_from_board(list1D, userInputOfGameSize):
   return create_inner_array_from_board(list1D, userInputOfGameSize-1)
 
 
-
 def create_final_board(list2D, gameSize, gameSize2):
   ''' Erwartet ein zweidimensionales Array list2D (mit der ersten Spalte von unserem Spiel) von der Funktion create_board und die doppelte User-Eingabe von der gewählten Spielfeldgröße. Die erste User-Eingabe wird für den rekursiven Aufruf bei jedem Durchgang runter gezählt und beendet schlussendlich den rekursiven Aufruf, wenn es den Wert von 3 unterschreitet. Die zweite User-Eingabe wird dazu verwendet, dass bei dem rekursiven Aufruf diese Variable sich nicht verändert und man somit immer die selbe Länge bei der append-Methode an das Array anhängt.
   Liefert das fertige zweidimensionale Array für unser variables Tic-Tac-Toe Spielfeld
@@ -19,7 +18,6 @@ def create_final_board(list2D, gameSize, gameSize2):
   else:
     list2D.append(create_inner_array_from_board([], gameSize2))
   return create_final_board(list2D, gameSize-1, gameSize2)
-
 
 
 def create_board(list1D, gameSize, counter):

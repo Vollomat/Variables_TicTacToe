@@ -12,15 +12,12 @@ def player_wins(a,c):
   return any_of(rows + cols + diags, contains_three_c)
 
 
-
 def player_X_wins(a):
   return player_wins(a,'X')
 
 
-
 def player_O_wins(a):
   return player_wins(a,'O')
-
 
 
 def draw(a):
@@ -30,14 +27,12 @@ def draw(a):
   return not contains_one(list," ")
 
 
-
 def move_allowed(spielfeld, rowInput, columnInput):
   '''Prüft, ob an Stelle (row,col) ein Zug gemacht werden darf.'''
   if((0 <= rowInput < len(spielfeld)) and (0 <= columnInput < len(spielfeld))):
     if(spielfeld[rowInput][columnInput] == " "):
       return True
   return False
-
 
 
 def is_game_over(spielfeld):

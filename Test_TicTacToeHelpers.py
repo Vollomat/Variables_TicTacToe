@@ -1,6 +1,5 @@
 from TicTacToeHelpers import player_wins,draw,move_allowed
 
-
 def test_player_wins():
   a1 = [['X','X','X'],['O',' ','O'],['X','O',' ']]
   assert(player_wins(a1,'X'))
@@ -15,15 +14,11 @@ def test_player_wins():
   assert(player_wins(a4,'X'))
 
 
-
-
 def test_draw():
   a1 = [['X','X','X'],['O',' ','O'],['X','O',' ']]
   assert(not draw(a1)) #nicht alles belegt
   a1 = [['O','X','O'],['X','O','O'],['X','O','X']]
   assert(draw(a1))
-
-
 
 
 def test_move_allowed():
@@ -33,8 +28,6 @@ def test_move_allowed():
   assert(not move_allowed(a1,4,0)) #außerhalb des Spielfelds
   assert(not move_allowed(a1,0,4)) #außerhalb des Spielfelds
   assert(not move_allowed(a1,0,0)) #weil schon belegt
-
-
 
 
 def run_tests_tictactoehelpers():

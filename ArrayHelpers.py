@@ -8,7 +8,6 @@ def any_of(a, f):
   return any(map(f,a))
 
 
-
 def contains_one(l, c):
   '''Prüft, ob die Liste l mindestens 1x das Zeichen c enthält.
      Liefert False, wenn l nicht mindestens 1x das Zeichen c enthält.
@@ -40,7 +39,6 @@ def contains_three(l, c, sameCounter):
       return True
     else:
       return contains_three(tail, c, sameCounter)
-
 
 
 def insertIntoList(l, rowInput, columnInput, c):

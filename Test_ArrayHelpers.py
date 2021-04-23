@@ -11,6 +11,7 @@ def test_contains_three():
   l4 = ['X', 'X', 'O', 'O', 'O', 'X']
   assert(contains_three(l4, 'O', 0))
 
+
 def test_contains_one():
   l1 = ['X', 'X', 'O', 'X', 'X', 'X']
   l2 = ['X', 'X', 'O', ' ', 'X', 'X']

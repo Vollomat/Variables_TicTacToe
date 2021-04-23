@@ -11,7 +11,6 @@ def delimitation(s, userInputOfGameSize):
   return delimitation(s, userInputOfGameSize-1)
 
 
-
 def board_to_string(b, userInputOfGameSize):
   '''Erwartet eine Liste b und eine User-Eingabe von der Spielfeldgröße. Die Methode erzeugt einen fertig aufgeteilten String, der dann im Form eines Spielfelds auf der Konsole ausgegeben werden kann mithilfe von print()
   '''

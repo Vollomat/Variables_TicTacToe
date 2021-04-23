@@ -3,7 +3,6 @@ from AusgabeFunktionen import board_to_string
 from ArrayHelpers import insertIntoList
 from TicTacToeHelpers import is_game_over, move_allowed
 
-
 def actual_player(counter):
   '''Erwartet den aktuellen Counter von moves und gibt den aktuellen Spieler als Character zurück (X oder O)
   '''
@@ -13,7 +12,6 @@ def actual_player(counter):
   else:
     print("Spieler O ist dran")
     return 'O'
-
 
 
 def startOfTheGame():
@@ -35,7 +33,6 @@ def startOfTheGame():
     startOfTheGame()
 
 
-
 def moves(spielfeld, counter):
   '''Erwartet ein Spielfeld und den aktuellen Counter. Es handelt sich hier um den GameLoop. Der User wird immer abgefragt, wo er nun als nächstes seinen Zug platzieren will. Wenn dies gültig ist, dann wird der Zug in einem neuen Spielfeld platziert um Seiteneffekte zu vermeiden. Nach jedem Zug wird kontrolliert, ob wer gewonnen hat und ob ein Unentschieden vorliegt. Dann ist das Spiel beendet, sonst rekursiver Aufruf der Methode bis einer gewinnt oder es unentschieden ausgeht. Außerdem wird nach jedem Zug das Spielfeld in der Konsole ausgegeben.
   '''
@@ -52,7 +49,6 @@ def moves(spielfeld, counter):
     return
   
   moves(neuesSpielfeld, counter+1)
-
 
 
 def insertIntoArray(spielfeld, rowInput, columnInput, player_at_the_moment, counter):
