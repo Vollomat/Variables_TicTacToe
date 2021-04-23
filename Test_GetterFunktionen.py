@@ -21,8 +21,8 @@ def test_get_diag1():
 def test_get_diag2():
   a1 = [[1,2,3],[4,5,6],[7,8,9]]
   a2 = [[1,2,3,4,5],[4,5,6,4,5],[7,8,9,4,5],[7,8,9,4,5],[7,8,9,4,5]]
-  assert(get_diag2(a1) == [7,5,3])
-  assert(get_diag2(a2) == [7,8,9,4,5])
+  assert(get_diag2(a1) == [3,5,7])
+  assert(get_diag2(a2) == [5,4,9,8,7])
 
 def run_tests_getter_functions():
   test_get_row()

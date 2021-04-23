@@ -11,9 +11,9 @@ def test_contains_three():
   l4 = ['X', 'X', 'O', 'O', 'O', 'X']
   assert(contains_three(l4, 'O', 0))
 
-def test_row_contains_only():
-  a1 = [['X','X','X'],['O','O','O'],['X','O',' ']]
-  assert(row_contains_only(a1,0,'X'))
-  assert(not row_contains_only(a1,1,'X'))
-  assert(not row_contains_only(a1,2,'X'))
 
+
+
+
+def run_tests_arrayhelpers():
+  test_contains_three()

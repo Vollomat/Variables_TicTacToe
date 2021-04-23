@@ -7,7 +7,7 @@ def test_player_wins():
   assert(player_wins(a1,'X'))
 
   a2 = [['X',' ',' '],['X','O','O'],['X','O',' ']]
-  assert(not player_wins(a2,'X'))
+  assert(player_wins(a2,'X'))
 
   a3 = [['X',' ',' '],['O','O','O'],[' ','O','X']]
   assert(player_wins(a3,'O'))
@@ -30,4 +30,5 @@ def test_move_allowed():
 
 def run_tests_tictactoehelpers():
   test_player_wins()
-  test_draw()
+  #test_draw()
+  test_move_allowed()

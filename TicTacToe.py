@@ -14,6 +14,8 @@ def actual_player(counter):
     print("Spieler O ist dran")
     return 'O'
 
+
+
 def startOfTheGame():
   '''Lässt das Tic-Tac-Toe Spiel beginnen! Fragt den User nach der gewünschten Spielfeldgröße und überprüft ihn auf Gültigkeit. Malt das Spielfeld über die Funktion board_to_string zum ersten Mal auf zum grafischen Überblick für den User und startet die moves Funktion, welche einer GameLoop-Funktion entspricht. Bei einer ungültigen Eingabe wird der User darauf hingewiesen und darf nochmal sein Glück versuchen.
   '''
@@ -31,6 +33,8 @@ def startOfTheGame():
   else:
     print("Ihre gewählte Spielgröße von " + playerinput + " verstößt gegen die Vorgaben. Versuchen Sie doch mal eine Spielgröße zwischen 3 bis 9!")
     startOfTheGame()
+
+
 
 def moves(spielfeld, counter):
   
@@ -57,6 +61,7 @@ def moves(spielfeld, counter):
     return;
   
   moves(neuesSpielfeld, counter+1)
+
 
 
 def insertIntoArray(spielfeld, rowInput, columnInput, player_at_the_moment, counter):
