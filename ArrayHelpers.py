@@ -1,4 +1,5 @@
 from GetterFunktionen import get_row, get_column, get_diag1, get_diag2
+from functools import reduce
 
 def any_of(a, f):
   ''' Erwartet ein Array a und eine Funktion f.
@@ -14,17 +15,9 @@ def contains_one(l, c):
      Bei einer leeren Liste wird False zurückgeben.
      Es wird eine Liste l erwartet, sowie das zu überprüfende Char c (immer für die Funktion draw verwendet, um zu schauen ob noch mindestens ein " " vorhanden ist auf dem Spielfeld.
   '''
-  if l == []:
-    return False
-  
-  head, *tail = l
+  list1D = reduce(lambda x,y :x+y ,l)
 
-  if(head != []):
-    if(head == c):
-      return True
-  
-  return contains_one(tail, c)
-
+  return c in list1D
 
 
 def contains_three(l, c, sameCounter):

@@ -1,7 +1,7 @@
 from ErzeugungsFunktionen import create_board
 from AusgabeFunktionen import board_to_string
 from ArrayHelpers import insertIntoList
-from TicTacToeHelpers import player_X_wins,player_O_wins,move_allowed
+from TicTacToeHelpers import player_X_wins,player_O_wins,move_allowed,draw,is_game_over
 
 
 def actual_player(counter):
@@ -37,7 +37,8 @@ def startOfTheGame():
 
 
 def moves(spielfeld, counter):
-  
+  '''Erwartet ein Spielfeld und den aktuellen Counter. Es handelt sich hier um den GameLoop. Der User wird immer abgefragt, wo er nun als nächstes seinen Zug platzieren will. Wenn dies gültig ist, dann wird der Zug in einem neuen Spielfeld platziert um Seiteneffekte zu vermeiden. Nach jedem Zug wird kontrolliert, ob wer gewonnen hat und ob ein Unentschieden vorliegt. Dann ist das Spiel beendet, sonst rekursiver Aufruf der Methode bis einer gewinnt oder es unentschieden ausgeht. Außerdem wird nach jedem Zug das Spielfeld in der Konsole ausgegeben.
+  '''
   player_at_the_moment = actual_player(counter)
 
   rowInput = int(input("An welcher freien Zeile wollen Sie Ihren nächsten Zug verwenden?: "))
@@ -47,18 +48,8 @@ def moves(spielfeld, counter):
   
   print(board_to_string(neuesSpielfeld, len(neuesSpielfeld)))
 
-  if(player_X_wins(neuesSpielfeld)):
-    print()
-    print("---------------------------------------------------------------------")
-    print("Der Spieler X hat gewonnen!!!")
-    print("---------------------------------------------------------------------")
-    return;
-  if(player_O_wins(neuesSpielfeld)):
-    print()
-    print("---------------------------------------------------------------------")
-    print("Der Spieler O hat gewonnen!!!")
-    print("---------------------------------------------------------------------")
-    return;
+  if(is_game_over(neuesSpielfeld)):
+    return
   
   moves(neuesSpielfeld, counter+1)
 

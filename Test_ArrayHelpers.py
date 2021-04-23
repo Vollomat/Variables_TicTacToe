@@ -1,4 +1,4 @@
-from ArrayHelpers import contains_three, row_contains_only, column_contains_only
+from ArrayHelpers import contains_three, contains_one
 
 
 def test_contains_three():
@@ -11,9 +11,15 @@ def test_contains_three():
   l4 = ['X', 'X', 'O', 'O', 'O', 'X']
   assert(contains_three(l4, 'O', 0))
 
-
-
+def test_contains_one():
+  l1 = ['X', 'X', 'O', 'X', 'X', 'X']
+  l2 = ['X', 'X', 'O', ' ', 'X', 'X']
+  l3 = [['X', 'X', 'O', 'O', 'X', 'X'], ['X', 'X', 'O', ' ', 'X', 'X'], ['X', 'X', 'O', ' ', 'X', 'X']]
+  assert(not contains_one(l1, " "))
+  assert(contains_one(l2, " "))
+  assert(contains_one(l3, " "))
 
 
 def run_tests_arrayhelpers():
   test_contains_three()
+  test_contains_one()
