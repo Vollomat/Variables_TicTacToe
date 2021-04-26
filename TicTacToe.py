@@ -25,7 +25,7 @@ def startOfTheGame():
   except ValueError: print("Dies ist keine Zahl!"), startOfTheGame()
 
   if(gameSize > 2 and gameSize < 10):
-    mylist = create_board([], gameSize, 0)
+    mylist = create_board(gameSize)
     print(board_to_string(mylist, len(mylist)))
     moves(mylist, 0) #Spieler X darf beginnen2
   else:
